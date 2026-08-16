@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://set-for-life-black.vercel.app/sitemap.xml
