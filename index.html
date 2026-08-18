@@ -20,7 +20,7 @@
 <meta name="twitter:image" content="https://set-for-life-black.vercel.app/og-image.png">
 
 <link rel="canonical" href="https://set-for-life-black.vercel.app/">
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%2315110F'/%3E%3Ctext x='50' y='62' font-family='Georgia' font-size='52' fill='%23DF7B58' text-anchor='middle' font-style='italic'%3ES%3C/text%3E%3C/svg%3E">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -61,12 +61,17 @@ img { max-width: 100%; height: auto; display: block; }
 a { color: var(--coral); text-decoration: none; transition: color 0.15s; }
 a:hover { color: var(--gold); }
 a:focus-visible,
-button:focus-visible {
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
   outline: 2px solid var(--coral);
   outline-offset: 3px;
   border-radius: 3px;
 }
 button { font-family: inherit; cursor: pointer; border: none; background: none; color: inherit; }
+.skip-link { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+.skip-link:focus { position: fixed; left: 1rem; top: 1rem; width: auto; height: auto; padding: .75rem 1rem; background: var(--coral); color: var(--bg); z-index: 1000; border-radius: 6px; }
 
 /* ── Typography ── */
 h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; font-weight: 400; line-height: 1.2; color: var(--text); }
@@ -822,9 +827,12 @@ footer {
   div[style*="position:fixed"][style*="bottom:1.5rem"][style*="right:1.5rem"] a{padding:.4rem .75rem!important;font-size:.6rem!important}
   button[style*="position:fixed"][style*="bottom:24px"][style*="right:24px"]{bottom:12px!important;right:12px!important;padding:7px 12px!important;font-size:11px!important}
 }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; } }
+@media print { nav, .hero-ctas, .lab-actions, .final-cta, #related-tools { display: none !important; } body, section, .section-alt, .section-deep { background: #fff !important; color: #111 !important; } section { padding: 1.5rem 0; } .container, .container-narrow { max-width: none; } .problem-card, .compound, .module, .commandment, .testimonial, .lab-shell { break-inside: avoid; border-color: #bbb !important; background: #fff !important; } }
 </style>
 </head>
 <body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
 
 <!-- ════════════════════════════════════════════════════════════════
      NAVIGATION
@@ -843,7 +851,7 @@ footer {
   </div>
 </nav>
 
-<main>
+<main id="main-content">
 <div class="truth-banner"><strong>Built from one documented experience, not a promise:</strong> the outcome figures below are RN Collins’s self-reported records. The lab helps you run and evaluate your own process. It does not guarantee replies, interviews, employment, or platform access.</div>
 
 <!-- ═
@@ -1396,18 +1404,18 @@ document.addEventListener('DOMContentLoaded', function() {
   // Nothing forced. FAQ items toggle on click.
 });
 
-const LAB_KEY='setforlife:lab:v2';function labLoad(){try{return JSON.parse(localStorage.getItem(LAB_KEY)||'{"targets":[]}')}catch(e){return{targets:[]}}}function labSave(x){localStorage.setItem(LAB_KEY,JSON.stringify(x))}
+const LAB_KEY='setforlife:lab:v2',LAB_STATUSES=['Researching','Ready','Sent','Replied','Meeting','Opportunity','Closed'];function newLabId(){return crypto.randomUUID?crypto.randomUUID():(Date.now().toString(36)+Math.random().toString(36).slice(2))}function cleanTarget(t){const pick=(k,n=500)=>typeof t?.[k]==='string'?t[k].slice(0,n):'';return{id:/^[A-Za-z0-9-]{1,80}$/.test(t?.id||'')?t.id:newLabId(),name:pick('name',120),org:pick('org',160),role:pick('role',160),route:pick('route',80),signal:pick('signal',800),url:pick('url',1000),next:pick('next',40),status:LAB_STATUSES.includes(t?.status)?t.status:'Researching',created:pick('created',40),updated:pick('updated',40)}}function labLoad(){try{const x=JSON.parse(localStorage.getItem(LAB_KEY)||'{"targets":[]}');return{targets:Array.isArray(x.targets)?x.targets.slice(0,1000).map(cleanTarget):[]}}catch(e){return{targets:[]}}}function labSave(x){try{localStorage.setItem(LAB_KEY,JSON.stringify(x));return true}catch(e){return false}}
 document.querySelectorAll('[data-lab-tab]').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('[data-lab-tab]').forEach(x=>x.classList.toggle('active',x===b));document.querySelectorAll('.lab-panel').forEach(x=>x.classList.toggle('active',x.id==='lab-'+b.dataset.labTab));if(b.dataset.labTab==='tracker')renderLab()}));
 function safeText(v){return String(v||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
 function saveTarget(){const x=labLoad(),t={id:crypto.randomUUID?crypto.randomUUID():Date.now().toString(),name:document.getElementById('t-name').value.trim(),org:document.getElementById('t-org').value.trim(),role:document.getElementById('t-role').value.trim(),route:document.getElementById('t-route').value,signal:document.getElementById('t-signal').value.trim(),url:document.getElementById('t-url').value.trim(),next:document.getElementById('t-next').value,status:'Researching',created:new Date().toISOString()};if(!t.name||!t.signal){document.getElementById('target-status').textContent='Add a person and a specific public signal first.';return}x.targets.push(t);labSave(x);document.getElementById('target-status').textContent='Saved locally. Open Track outcomes to continue.';clearTargetForm(false)}
 function clearTargetForm(clearStatus=true){['t-name','t-org','t-role','t-signal','t-url','t-next'].forEach(id=>document.getElementById(id).value='');if(clearStatus)document.getElementById('target-status').textContent=''}
 function buildMessage(){const bridge=document.getElementById('m-bridge').value.trim(),signal=document.getElementById('m-signal').value.trim(),rel=document.getElementById('m-relevance').value.trim(),ask=document.getElementById('m-ask').value.trim(),ch=document.getElementById('m-channel').value;if(!bridge||!signal||!ask){document.getElementById('message-status').textContent='Complete your bridge, specific signal, and ask.';return}let out=ch==='invite'?('Aloha—'+signal+' '+ask):('Aloha—\n\n'+signal+'\n\n'+bridge+(rel?' '+rel:'')+'\n\n'+ask+'\n\nWith aloha,');if(ch==='invite'&&out.length>200){out=out.slice(0,197)+'…';document.getElementById('message-status').textContent='Draft trimmed to 200 characters. Edit for accuracy and current platform limits.'}else document.getElementById('message-status').textContent='Working draft only. Verify every claim and rewrite in your own voice.';document.getElementById('message-output').textContent=out}
-function copyDraft(){navigator.clipboard.writeText(document.getElementById('message-output').textContent).then(()=>document.getElementById('message-status').textContent='Copied. Review and personalize before sending.')}
+function copyDraft(){navigator.clipboard.writeText(document.getElementById('message-output').textContent).then(()=>document.getElementById('message-status').textContent='Copied. Review and personalize before sending.').catch(()=>document.getElementById('message-status').textContent='Copy was blocked. Select the draft and copy it manually.')}
 function updateStatus(id,status){const x=labLoad(),t=x.targets.find(a=>a.id===id);if(t){t.status=status;t.updated=new Date().toISOString();labSave(x);renderLab()}}
 function removeTarget(id){const x=labLoad();x.targets=x.targets.filter(a=>a.id!==id);labSave(x);renderLab()}
-function renderLab(){const x=labLoad(),ts=x.targets||[],count=s=>ts.filter(t=>t.status===s).length,responses=count('Replied')+count('Meeting')+count('Opportunity'),sent=count('Sent')+responses;document.getElementById('lab-metrics').innerHTML=[['Targets',ts.length],['Sent',sent],['Responses',responses],['Meetings',count('Meeting')],['Response rate',sent?Math.round(responses/sent*100)+'%':'—']].map(m=>'<div class="lab-metric"><strong>'+m[1]+'</strong>'+m[0]+'</div>').join('');document.getElementById('lab-records').innerHTML=ts.length?ts.map(t=>'<div class="lab-record"><div><strong>'+safeText(t.name)+'</strong><br>'+safeText(t.org)+' · '+safeText(t.route)+'</div><div>'+safeText(t.next||'No next date')+'</div><select aria-label="Status for '+safeText(t.name)+'" onchange="updateStatus(\''+t.id+'\',this.value)">'+['Researching','Ready','Sent','Replied','Meeting','Opportunity','Closed'].map(v=>'<option'+(v===t.status?' selected':'')+'>'+v+'</option>').join('')+'</select><button onclick="removeTarget(\''+t.id+'\')" aria-label="Remove '+safeText(t.name)+'">Remove</button></div>').join(''):'<p>No targets saved yet. Start with one person whose work you have genuinely examined.</p>'}
+function renderLab(){const x=labLoad(),ts=x.targets||[],count=s=>ts.filter(t=>t.status===s).length,responses=count('Replied')+count('Meeting')+count('Opportunity'),sent=count('Sent')+responses;document.getElementById('lab-metrics').innerHTML=[['Targets',ts.length],['Sent',sent],['Responses',responses],['Meetings',count('Meeting')],['Response rate',sent?Math.round(responses/sent*100)+'%':'—']].map(m=>'<div class="lab-metric"><strong>'+m[1]+'</strong>'+m[0]+'</div>').join('');document.getElementById('lab-records').innerHTML=ts.length?ts.map(t=>'<div class="lab-record"><div><strong>'+safeText(t.name)+'</strong><br>'+safeText(t.org)+' · '+safeText(t.route)+'</div><div>'+safeText(t.next||'No next date')+'</div><select aria-label="Status for '+safeText(t.name)+'" onchange="updateStatus(\''+t.id+'\',this.value)">'+LAB_STATUSES.map(v=>'<option'+(v===t.status?' selected':'')+'>'+v+'</option>').join('')+'</select><button onclick="removeTarget(\''+t.id+'\')" aria-label="Remove '+safeText(t.name)+'">Remove</button></div>').join(''):'<p>No targets saved yet. Start with one person whose work you have genuinely examined.</p>'}
 function exportLab(){const x=labLoad(),fields=['name','org','role','route','signal','url','next','status','created','updated'],rows=(x.targets||[]).map(t=>fields.map(f=>'"'+String(t[f]||'').replace(/"/g,'""')+'"').join(',')),csv=[fields.join(','),...rows].join('\n'),a=document.createElement('a');a.href=URL.createObjectURL(new Blob([csv],{type:'text/csv'}));a.download='set-for-life-outreach-'+new Date().toISOString().slice(0,10)+'.csv';a.click();URL.revokeObjectURL(a.href);const backup=document.createElement('a');backup.href=URL.createObjectURL(new Blob([JSON.stringify(x,null,2)],{type:'application/json'}));backup.download='set-for-life-backup-'+new Date().toISOString().slice(0,10)+'.json';backup.click();URL.revokeObjectURL(backup.href)}
-function importLab(){document.getElementById('lab-import').click()}document.getElementById('lab-import').addEventListener('change',e=>{const f=e.target.files[0];if(!f)return;const r=new FileReader();r.onload=()=>{try{const x=JSON.parse(r.result);if(!Array.isArray(x.targets))throw Error();labSave(x);renderLab()}catch{alert('That backup could not be read.')}};r.readAsText(f)});
+function importLab(){document.getElementById('lab-import').click()}document.getElementById('lab-import').addEventListener('change',e=>{const f=e.target.files[0];if(!f)return;const r=new FileReader();r.onload=()=>{try{const x=JSON.parse(r.result);if(!Array.isArray(x.targets))throw Error();const clean={targets:x.targets.slice(0,1000).map(cleanTarget)};if(!labSave(clean))throw Error();renderLab()}catch{alert('That backup could not be read.')}};r.readAsText(f)});
 function clearLab(){if(confirm('Clear all Set for Life records stored in this browser?')){localStorage.removeItem(LAB_KEY);renderLab()}}
 
 </script>
