@@ -1,6 +1,6 @@
 # Set for Life commerce registry
 
-Last verified: 2026-08-16  
+Last verified: 2026-08-18  
 Control: RR-051
 
 This file is the repository-level source of truth for current Set for Life availability and pricing. Historical plans, funnels, drafts, and product concepts do not override it.
