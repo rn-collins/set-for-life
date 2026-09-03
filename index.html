@@ -26,7 +26,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Syne:wght@500;600;700&family=Manrope:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=Mulish:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
 
 <style>
 :root {
@@ -51,7 +51,7 @@ html { scroll-behavior: smooth; }
 body {
   background: var(--bg);
   color: var(--text);
-  font-family: 'Manrope', sans-serif;
+  font-family: 'Mulish', system-ui, sans-serif;
   font-size: 16px;
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
@@ -76,14 +76,14 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .skip-link:focus { position: fixed; left: 1rem; top: 1rem; width: auto; height: auto; padding: .75rem 1rem; background: var(--coral); color: var(--bg); z-index: 1000; border-radius: 6px; }
 
 /* ── Typography ── */
-h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; font-weight: 400; line-height: 1.2; color: var(--text); }
+h1, h2, h3, h4 { font-family: 'Arvo', Georgia, serif; font-weight: 400; line-height: 1.2; color: var(--text); }
 h1 { font-size: clamp(2.4rem, 5.5vw, 4.4rem); letter-spacing: -0.01em; }
 h2 { font-size: clamp(1.8rem, 3.6vw, 2.8rem); letter-spacing: -0.01em; }
 h3 { font-size: clamp(1.3rem, 2.4vw, 1.7rem); }
 em { font-style: italic; color: var(--coral); }
 
 .label {
-  font-family: 'Syne', sans-serif;
+  font-family: 'Mulish', system-ui, sans-serif;
   font-weight: 600;
   font-size: 0.7rem;
   letter-spacing: 0.18em;
@@ -94,7 +94,7 @@ em { font-style: italic; color: var(--coral); }
 }
 
 .mono {
-  font-family: 'DM Mono', monospace;
+  font-family: 'Arvo', Georgia, serif;
   font-size: 0.75rem;
   letter-spacing: 0.08em;
 }
@@ -126,7 +126,7 @@ nav {
   gap: 2rem;
 }
 .nav-logo {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Arvo', Georgia, serif;
   font-size: 1.3rem;
   color: var(--text);
 }
@@ -138,7 +138,7 @@ nav {
   align-items: center;
 }
 .nav-links a {
-  font-family: 'Syne', sans-serif;
+  font-family: 'Mulish', system-ui, sans-serif;
   font-size: 0.78rem;
   font-weight: 500;
   letter-spacing: 0.06em;
@@ -171,7 +171,7 @@ nav {
   }
   .nav-mobile-toggle {
     display: block;
-    font-family: 'Syne', sans-serif;
+    font-family: 'Mulish', system-ui, sans-serif;
     font-size: 0.8rem;
     color: var(--text);
     padding: 0.4rem 0.8rem;
@@ -221,14 +221,14 @@ nav {
   text-align: center;
 }
 .hero-stat-num {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Arvo', Georgia, serif;
   font-size: 2.6rem;
   color: var(--coral);
   line-height: 1;
   margin-bottom: 0.3rem;
 }
 .hero-stat-lab {
-  font-family: 'DM Mono', monospace;
+  font-family: 'Arvo', Georgia, serif;
   font-size: 0.62rem;
   letter-spacing: 0.12em;
   color: var(--text-muted);
@@ -246,7 +246,7 @@ nav {
   display: inline-block;
   padding: 0.95rem 1.8rem;
   border-radius: 7px;
-  font-family: 'Syne', sans-serif;
+  font-family: 'Mulish', system-ui, sans-serif;
   font-size: 0.78rem;
   font-weight: 600;
   letter-spacing: 0.06em;
@@ -294,14 +294,14 @@ nav {
   gap: 1.4rem 3rem;
 }
 .proof-bar-label {
-  font-family: 'DM Mono', monospace;
+  font-family: 'Arvo', Georgia, serif;
   font-size: 0.62rem;
   letter-spacing: 0.14em;
   color: var(--text-muted);
   text-transform: uppercase;
 }
 .proof-bar-item {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Arvo', Georgia, serif;
   font-style: italic;
   font-size: 0.95rem;
   color: var(--text-dim);
@@ -339,7 +339,7 @@ nav {
   border-radius: 12px;
 }
 .problem-stat {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Arvo', Georgia, serif;
   font-size: 3rem;
   color: var(--coral);
   line-height: 1;
@@ -366,7 +366,7 @@ nav {
   position: relative;
 }
 .compound-num {
-  font-family: 'DM Mono', monospace;
+  font-family: 'Arvo', Georgia, serif;
   font-size: 0.7rem;
   letter-spacing: 0.14em;
   color: var(--coral);
@@ -403,7 +403,7 @@ nav {
   transform: translateX(2px);
 }
 .module-num {
-  font-family: 'DM Mono', monospace;
+  font-family: 'Arvo', Georgia, serif;
   font-size: 1.4rem;
   color: var(--coral);
   font-weight: 500;
@@ -433,7 +433,7 @@ nav {
   border-radius: 10px;
 }
 .ai-project-tag {
-  font-family: 'DM Mono', monospace;
+  font-family: 'Arvo', Georgia, serif;
   font-size: 0.62rem;
   letter-spacing: 0.12em;
   color: var(--gold);
@@ -442,7 +442,7 @@ nav {
   display: block;
 }
 .ai-project h3 {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Arvo', Georgia, serif;
   font-size: 1.2rem;
   margin-bottom: 0.5rem;
 }
@@ -465,7 +465,7 @@ nav {
   border-radius: 0 10px 10px 0;
 }
 .commandment-rule {
-  font-family: 'DM Mono', monospace;
+  font-family: 'Arvo', Georgia, serif;
   font-size: 0.65rem;
   letter-spacing: 0.14em;
   color: var(--gold);
@@ -474,7 +474,7 @@ nav {
   display: block;
 }
 .commandment h3 {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Arvo', Georgia, serif;
   font-size: 1.2rem;
   margin-bottom: 0.4rem;
 }
@@ -505,7 +505,7 @@ nav {
   border-color: var(--coral-line);
 }
 .included-name {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Arvo', Georgia, serif;
   font-size: 1.15rem;
   color: var(--text);
   margin-bottom: 0.2rem;
@@ -516,7 +516,7 @@ nav {
   line-height: 1.6;
 }
 .included-tag {
-  font-family: 'DM Mono', monospace;
+  font-family: 'Arvo', Georgia, serif;
   font-size: 0.72rem;
   color: var(--gold);
   white-space: nowrap;
@@ -539,7 +539,7 @@ nav {
   border-color: var(--coral-line);
 }
 .testimonial-quote {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Arvo', Georgia, serif;
   font-size: 1.15rem;
   color: var(--text);
   line-height: 1.6;
@@ -547,7 +547,7 @@ nav {
   font-style: italic;
 }
 .testimonial-attr {
-  font-family: 'DM Mono', monospace;
+  font-family: 'Arvo', Georgia, serif;
   font-size: 0.7rem;
   color: var(--coral);
   letter-spacing: 0.08em;
@@ -558,7 +558,7 @@ nav {
   right: 1.4rem;
   background: var(--gold);
   color: var(--bg);
-  font-family: 'DM Mono', monospace;
+  font-family: 'Arvo', Georgia, serif;
   font-size: 0.58rem;
   font-weight: 500;
   letter-spacing: 0.1em;
@@ -589,14 +589,14 @@ nav {
   gap: 1.4rem;
 }
 .cred-num {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Arvo', Georgia, serif;
   font-size: 2.4rem;
   color: var(--coral);
   line-height: 1;
   margin-bottom: 0.3rem;
 }
 .cred-lab {
-  font-family: 'DM Mono', monospace;
+  font-family: 'Arvo', Georgia, serif;
   font-size: 0.65rem;
   color: var(--text-muted);
   letter-spacing: 0.08em;
@@ -617,7 +617,7 @@ nav {
 }
 .faq-q {
   padding: 1.4rem 1.8rem;
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Arvo', Georgia, serif;
   font-size: 1.15rem;
   color: var(--text);
   cursor: pointer;
@@ -630,7 +630,7 @@ nav {
 .faq-q:hover { background: var(--coral-soft); }
 .faq-q::after {
   content: "+";
-  font-family: 'DM Mono', monospace;
+  font-family: 'Arvo', Georgia, serif;
   font-size: 1.4rem;
   color: var(--coral);
   flex-shrink: 0;
@@ -662,7 +662,7 @@ nav {
   margin: 3rem auto 0;
 }
 .pricing-eyebrow {
-  font-family: 'DM Mono', monospace;
+  font-family: 'Arvo', Georgia, serif;
   font-size: 0.7rem;
   letter-spacing: 0.16em;
   color: var(--gold);
@@ -670,7 +670,7 @@ nav {
   margin-bottom: 1.2rem;
 }
 .pricing-price {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Arvo', Georgia, serif;
   font-size: 4.5rem;
   color: var(--coral);
   line-height: 1;
@@ -682,7 +682,7 @@ nav {
   margin-right: 0.1rem;
 }
 .pricing-sub {
-  font-family: 'DM Mono', monospace;
+  font-family: 'Arvo', Georgia, serif;
   font-size: 0.75rem;
   letter-spacing: 0.1em;
   color: var(--text-dim);
@@ -708,10 +708,10 @@ nav {
   color: var(--coral);
   position: absolute;
   left: 0;
-  font-family: 'DM Mono', monospace;
+  font-family: 'Arvo', Georgia, serif;
 }
 .pricing-note {
-  font-family: 'DM Mono', monospace;
+  font-family: 'Arvo', Georgia, serif;
   font-size: 0.7rem;
   color: var(--text-muted);
   margin-top: 1.4rem;
@@ -754,7 +754,7 @@ footer {
   align-items: start;
 }
 .footer-brand {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Arvo', Georgia, serif;
   font-size: 1.2rem;
   color: var(--text);
   margin-bottom: 0.4rem;
@@ -773,7 +773,7 @@ footer {
   flex-wrap: wrap;
 }
 .footer-links a {
-  font-family: 'Syne', sans-serif;
+  font-family: 'Mulish', system-ui, sans-serif;
   font-size: 0.75rem;
   font-weight: 500;
   letter-spacing: 0.06em;
@@ -785,7 +785,7 @@ footer {
   margin: 2.4rem auto 0;
   padding-top: 1.6rem;
   border-top: 1px solid var(--border-soft);
-  font-family: 'DM Mono', monospace;
+  font-family: 'Arvo', Georgia, serif;
   font-size: 0.7rem;
   color: var(--text-muted);
   text-align: center;
@@ -812,7 +812,7 @@ footer {
 
 .truth-banner{background:#fff8e7;border-left:4px solid #b8842a;padding:14px 18px;margin:0;font-size:13px;color:#5a4000}
 .lab-shell{background:#f7f1e7;border:1px solid #d8c9b7;padding:clamp(1rem,3vw,2rem);border-radius:8px}
-.lab-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}.lab-field{display:flex;flex-direction:column;gap:.35rem}.lab-field.full{grid-column:1/-1}.lab-field label{font-family:'DM Mono',monospace;font-size:.68rem;text-transform:uppercase;letter-spacing:.08em;color:#6b594b}.lab-field input,.lab-field textarea,.lab-field select{width:100%;padding:.72rem;border:1px solid #9e8a72;border-radius:4px;background:#fff;font:inherit;color:#1d1815}.lab-field textarea{min-height:86px;resize:vertical}.lab-actions{display:flex;gap:.65rem;flex-wrap:wrap;margin:1rem 0}.lab-tabs{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1rem}.lab-tabs button{padding:.55rem .75rem;border:1px solid #b8842a;border-radius:999px}.lab-tabs button.active{background:#8f6417;color:#fff}.lab-panel{display:none}.lab-panel.active{display:block}.lab-output{white-space:pre-wrap;background:#1d1815;color:#f7f1e7;padding:1rem;border-radius:5px;min-height:90px}.lab-metrics{display:grid;grid-template-columns:repeat(6,1fr);gap:.6rem;margin:1rem 0}.lab-metric{background:#fff;border:1px solid #d8c9b7;padding:.8rem;text-align:center}.lab-metric strong{display:block;font-size:1.3rem}.lab-record{display:grid;grid-template-columns:1.3fr 1fr 1fr auto;gap:.6rem;align-items:center;padding:.75rem 0;border-bottom:1px solid #d8c9b7;font-size:.82rem}.source-note{font-size:.76rem;line-height:1.6;color:#6b594b;margin-top:1rem}.sr-status{min-height:1.3em;font-size:.78rem;color:#5a4000}.lab-shell .btn-ghost,.lab-tabs button{color:#1d1815}.lab-shell .btn-ghost{border-color:#9e8a72}.lab-shell .btn-ghost:hover{border-color:#8B4A2E;color:#8B4A2E}.lab-import{position:relative;overflow:hidden}.lab-import-input{position:absolute;width:1px;height:1px;padding:0;margin:0;opacity:0;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap}.lab-import:focus-within{outline:2px solid var(--coral);outline-offset:3px}@media(max-width:760px){.lab-grid{grid-template-columns:1fr}.lab-field.full{grid-column:auto}.lab-metrics{grid-template-columns:repeat(2,1fr)}.lab-record{grid-template-columns:1fr}}
+.lab-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}.lab-field{display:flex;flex-direction:column;gap:.35rem}.lab-field.full{grid-column:1/-1}.lab-field label{font-family:'Arvo', Georgia, serif;font-size:.68rem;text-transform:uppercase;letter-spacing:.08em;color:#6b594b}.lab-field input,.lab-field textarea,.lab-field select{width:100%;padding:.72rem;border:1px solid #9e8a72;border-radius:4px;background:#fff;font:inherit;color:#1d1815}.lab-field textarea{min-height:86px;resize:vertical}.lab-actions{display:flex;gap:.65rem;flex-wrap:wrap;margin:1rem 0}.lab-tabs{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1rem}.lab-tabs button{padding:.55rem .75rem;border:1px solid #b8842a;border-radius:999px}.lab-tabs button.active{background:#8f6417;color:#fff}.lab-panel{display:none}.lab-panel.active{display:block}.lab-output{white-space:pre-wrap;background:#1d1815;color:#f7f1e7;padding:1rem;border-radius:5px;min-height:90px}.lab-metrics{display:grid;grid-template-columns:repeat(6,1fr);gap:.6rem;margin:1rem 0}.lab-metric{background:#fff;border:1px solid #d8c9b7;padding:.8rem;text-align:center}.lab-metric strong{display:block;font-size:1.3rem}.lab-record{display:grid;grid-template-columns:1.3fr 1fr 1fr auto;gap:.6rem;align-items:center;padding:.75rem 0;border-bottom:1px solid #d8c9b7;font-size:.82rem}.source-note{font-size:.76rem;line-height:1.6;color:#6b594b;margin-top:1rem}.sr-status{min-height:1.3em;font-size:.78rem;color:#5a4000}.lab-shell .btn-ghost,.lab-tabs button{color:#1d1815}.lab-shell a{color:#8B4A2E;text-decoration:underline;text-underline-offset:2px}.lab-shell a:hover{color:#6F3A23}.lab-shell .btn-ghost{border-color:#9e8a72}.lab-shell .btn-ghost:hover{border-color:#8B4A2E;color:#8B4A2E}.lab-import{position:relative;overflow:hidden}.lab-import-input{position:absolute;width:1px;height:1px;padding:0;margin:0;opacity:0;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap}.lab-import:focus-within{outline:2px solid var(--coral);outline-offset:3px}@media(max-width:760px){.lab-grid{grid-template-columns:1fr}.lab-field.full{grid-column:auto}.lab-metrics{grid-template-columns:repeat(2,1fr)}.lab-record{grid-template-columns:1fr}}
 </style>
 <link rel="sitemap" type="application/xml" href="/sitemap.xml"/>
 <script defer src="/_vercel/insights/script.js">
@@ -829,6 +829,68 @@ footer {
 }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; } }
 @media print { nav, .hero-ctas, .lab-actions, .final-cta, #related-tools { display: none !important; } body, section, .section-alt, .section-deep { background: #fff !important; color: #111 !important; } section { padding: 1.5rem 0; } .container, .container-narrow { max-width: none; } .problem-card, .compound, .module, .commandment, .testimonial, .lab-shell { break-inside: avoid; border-color: #bbb !important; background: #fff !important; } }
+
+/* ── The record idiom ──────────────────────────────────────────────────────
+   This page is the documentation of one person's process: counted messages,
+   a recorded reply rate, dated verification. It was set in Cormorant Garamond
+   italic display — the same four faces as aloha-ai-governance and
+   aloha-legal-ai-monitor, which are not related to this build at all — and it
+   read as a luxury brochure rather than as a record of work.
+
+   Arvo and Mulish now carry it. Arvo is a geometric slab: in caps and tracked
+   it stamps a heading the way a ledger rules one, and it takes over the small
+   keyed role DM Mono held. Mulish reads the running text. Neither face is used
+   anywhere else in this estate.
+
+   The dark ground, coral and gold are kept deliberately: that palette is this
+   build's own and no other build in the estate shares it. Only the type, the
+   radii, and three failing contrast pairs have moved. Prices, CTAs, counts and
+   availability wording are untouched.
+
+   Fonts load from fonts.googleapis.com because this build's CSP allows exactly
+   that and nothing else: style-src permits fonts.googleapis.com and font-src is
+   https://fonts.gstatic.com with no 'self', so a self-hosted woff2 would be
+   blocked here. The CSP is not modified to suit the type. */
+
+:root { --radius: 2px; }
+
+/* Squared off: a record has corners. */
+.lab-shell, .lab-output, .lab-metric, .lab-field input, .lab-field textarea,
+.lab-field select, .skip-link:focus, .btn, .btn-primary, .btn-ghost,
+.nav-cta, .stat, .proof-card, .problem-card, .faq-item { border-radius: var(--radius); }
+.lab-tabs button { border-radius: var(--radius); }
+
+/* Figures are counted things; line them up like counted things. */
+.stat-value, .stat-num, .metric, .lab-metric strong, .proof-figure,
+.hero-stats, .lab-metrics, .lab-record {
+  font-variant-numeric: tabular-nums lining-nums;
+  font-feature-settings: 'tnum' 1, 'lnum' 1;
+}
+
+/* Keys — eyebrows, stat captions, field labels — are stamped, not typeset. */
+.label { font-family: 'Arvo', Georgia, serif; font-weight: 700; letter-spacing: .14em; }
+.mono  { font-family: 'Arvo', Georgia, serif; font-weight: 400; letter-spacing: .1em; }
+
+/* Arvo carries far more weight than Cormorant did; let the display breathe. */
+h1, h2, h3, h4 { font-weight: 700; letter-spacing: -0.015em; }
+h1 { font-size: clamp(2.1rem, 4.6vw, 3.5rem); line-height: 1.12; }
+h2 { font-size: clamp(1.55rem, 3vw, 2.3rem); line-height: 1.18; }
+h3 { font-size: clamp(1.15rem, 2vw, 1.45rem); line-height: 1.25; }
+em { font-style: italic; }
+
+.sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+}
+
+@media (forced-colors: active) {
+  .lab-shell, .lab-metric, .lab-output, .stat, .proof-card, .problem-card,
+  .faq-item, .lab-record { border: 1px solid CanvasText; }
+  .btn, .nav-cta, .lab-tabs button { border: 1px solid ButtonText; background: ButtonFace; color: ButtonText; }
+  a:focus-visible, button:focus-visible, input:focus-visible,
+  select:focus-visible, textarea:focus-visible { outline-color: Highlight; }
+  .label, .mono { color: CanvasText; }
+}
 </style>
 </head>
 <body>
@@ -1386,7 +1448,7 @@ footer {
   <div class="footer-copy">
     &copy; 2026 Rayven-Nikkita Collins LLC · Honolulu, Hawai&#x02BB;i
   </div>
-<div style="max-width:1080px;margin:1.6rem auto 0;padding:1.2rem 2rem;border-top:1px solid rgba(242,235,227,0.08);font-family:DM Mono,monospace;font-size:0.68rem;color:#7A6B5D;line-height:1.7;letter-spacing:0.04em;">DISCLAIMER: Set for Life is an educational tool and documentation of one person’s process. Nothing on this site constitutes legal advice, career advice, or a guarantee of employment outcomes. Results described reflect the personal experience of RN Collins and are not typical. Individual results will vary. Product and links verified 18 August 2026.</div></footer>
+<div style="max-width:1080px;margin:1.6rem auto 0;padding:1.2rem 2rem;border-top:1px solid rgba(242,235,227,0.08);font-family:'Arvo', Georgia, serif;font-size:0.68rem;color:#948373;line-height:1.7;letter-spacing:0.04em;">DISCLAIMER: Set for Life is an educational tool and documentation of one person’s process. Nothing on this site constitutes legal advice, career advice, or a guarantee of employment outcomes. Results described reflect the personal experience of RN Collins and are not typical. Individual results will vary. Product and links verified 18 August 2026.</div></footer>
 
 <script>
 // Smooth scroll handled by CSS scroll-behavior. Just close mobile nav on link click.
@@ -1421,6 +1483,6 @@ function clearLab(){if(confirm('Clear all Set for Life records stored in this br
 
 </script>
 
-<div style="text-align:center;padding:.75rem 1rem;font-size:.7rem;border-top:1px solid rgba(0,0,0,.1);margin-top:2rem">Built by <a href="https://aloha-ai-consulting.vercel.app" target="_blank" rel="noopener" style="color:#1B7A68;text-decoration:none">Aloha AI</a>. Explore all AI tools and projects at <a href="https://rn-portfolio-khaki.vercel.app" target="_blank" rel="noopener" style="color:#1B7A68;text-decoration:none">RN Builds</a>.</div>
+<div style="text-align:center;padding:.75rem 1rem;font-size:.7rem;border-top:1px solid rgba(0,0,0,.1);margin-top:2rem">Built by <a href="https://aloha-ai-consulting.vercel.app" target="_blank" rel="noopener" style="color:#DF7B58;text-decoration:none">Aloha AI</a>. Explore all AI tools and projects at <a href="https://rn-portfolio-khaki.vercel.app" target="_blank" rel="noopener" style="color:#DF7B58;text-decoration:none">RN Builds</a>.</div>
 </body>
 </html>
